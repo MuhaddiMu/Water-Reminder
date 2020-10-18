@@ -18,6 +18,11 @@ var Minutes
 
 let notificationSound = new Audio("sounds/" + Audiofile)
 
+chrome.notifications.create(notificationOpts, id => {
+  notID = id
+})
+notificationSound.play()
+
 function start() {
   setInterval(() => {
     notificationSound.play()
